@@ -1,0 +1,306 @@
+{
+  "site": {
+    "title": "Hoag Land Services",
+    "tagline": "Central Florida • Site • Tree • Fence",
+    "description": "Site work, tree services, and fencing for residential & commercial properties.",
+    "established": 2017,
+    "legalName": "Hoag Land Services, LLC",
+    "serviceArea": "DeLand, DeLeon Springs, and surrounding Central Florida areas",
+    "phone": "(386) 561-0003",
+    "phoneTel": "+13865610003",
+    "email": "tyler@hlsdeland.com",
+    "location": {
+      "city": "DeLand",
+      "state": "FL",
+      "country": "USA",
+      "region": "Central Florida"
+    },
+    "social": {
+      "facebook": "https://facebook.com/hoaglandservices",
+      "instagram": "https://instagram.com/hls_deland"
+    }
+  },
+  "navigation": [
+    { "label": "Home", "href": "index.html" },
+    { "label": "About", "href": "about.html" },
+    { "label": "Services", "href": "services.html" },
+    { "label": "Portfolio", "href": "portfolio.html" },
+    { "label": "Join Our Team", "href": "join.html" },
+    { "label": "Contact", "href": "contact.html" }
+  ],
+  "pages": {
+    "home": {
+      "url": "index.html",
+      "meta": {
+        "title": "Hoag Land Services",
+        "description": "Site work, tree services, and fencing for residential & commercial properties in Central Florida.",
+        "ogImage": "photos/og-image.jpg"
+      },
+      "sections": {
+        "hero": {
+          "badge": "Central Florida • Site • Tree • Fence",
+          "headline": "Find out how HLS can help you.",
+          "subheadline": "Site work, tree services, and fencing for residential & commercial properties.",
+          "backgroundImage": "photos/logo_enhanced.png",
+          "ctas": [
+            { "label": "Find out how HLS can help you", "type": "primary" },
+            { "label": "Call (386) 561-0003", "href": "tel:+13865610003", "type": "outline" }
+          ]
+        },
+        "services": {
+          "heading": "Services",
+          "cards": [
+            {
+              "title": "Site Services",
+              "description": "Land clearing, grading, driveways and drainage.",
+              "link": { "label": "View Site Services", "href": "services.html#site-services" },
+              "image": "photos/site1.JPEG"
+            },
+            {
+              "title": "Tree Services",
+              "description": "Trimming, removals and storm clean-up.",
+              "link": { "label": "View Tree Services", "href": "services.html#tree-services" },
+              "image": "photos/tree5.JPEG"
+            },
+            {
+              "title": "Fence Services",
+              "description": "Perimeter, pasture and privacy fencing.",
+              "link": { "label": "View Fence Services", "href": "services.html#fence-services" },
+              "image": "photos/fence5.jpeg"
+            }
+          ]
+        }
+      }
+    },
+    "about": {
+      "url": "about.html",
+      "sections": {
+        "hero": {
+          "headline": "Local, experienced land services in Central Florida."
+        },
+        "story": {
+          "heading": "Our story",
+          "paragraphs": [
+            "HLS officially came to life in 2019 by CEO Tyler Hoag however, the foundation was built many years before. With over a decade of experience in the utility forestry and construction sector our intention and direction for HLS became clear.",
+            "The business began as a single tractor service serving residential clients in the greater DeLand area. With time, opportunity, and education, HLS has grown into a certified arborist tree service and a full site service. HLS is supported by knowledgeable, driven and durable team members who surpass customer expectations."
+          ]
+        },
+        "cta": {
+          "heading": "Ready to walk through your property?",
+          "buttons": [
+            { "label": "Request an Estimate", "href": "contact.html", "type": "primary" }
+          ]
+        }
+      }
+    },
+    "services": {
+      "url": "services.html",
+      "sections": {
+        "hero": {
+          "badge": "Central Florida • Residential & Commercial",
+          "heading": "Services",
+          "subheading": "Simple, straight-forward services for site work, tree work, and fencing."
+        },
+        "tabs": ["Site", "Tree", "Fencing"],
+        "site": {
+          "id": "site-services",
+          "badges": ["Residential & commercial", "Serving DeLand & Central Florida", "Safety-first crews"],
+          "services": [
+            "Land Clearing",
+            "Earth works and Excavation",
+            "Erosion Control",
+            "Environmental services"
+          ]
+        },
+        "tree": {
+          "id": "tree-services",
+          "certifications": ["ISA Certified Arborist", "ISA Tree Risk Assessment Qualified"],
+          "services": [
+            "Tree Removal",
+            "Tree Trimming",
+            "Palm Pruning",
+            "Tree installation"
+          ]
+        },
+        "fencing": {
+          "id": "fence-services",
+          "types": [
+            "Wood (multiple styles)",
+            "Vinyl options",
+            "Aluminum options"
+          ]
+        },
+        "estimateCta": {
+          "heading": "Tell us what you need and we'll follow up with next steps.",
+          "button": { "label": "Request an Estimate", "href": "contact.html" }
+        }
+      }
+    },
+    "portfolio": {
+      "url": "portfolio.html",
+      "sections": {
+        "hero": {
+          "heading": "Portfolio",
+          "subheading": "Browse a few recent jobs by service type."
+        },
+        "collections": [
+          {
+            "id": "fencing",
+            "label": "Fencing Projects",
+            "images": [
+              "photos/fence1.jpeg", "photos/fence2.jpeg", "photos/fence3.jpeg",
+              "photos/fence4.jpeg", "photos/fence5.jpeg", "photos/fence6.jpeg",
+              "photos/fence7.jpeg", "photos/fence8.jpeg", "photos/fence9.jpeg",
+              "photos/fence10.jpeg", "photos/fence11.jpeg", "photos/fence12.jpg"
+            ]
+          },
+          {
+            "id": "site",
+            "label": "Site Work & Land Clearing",
+            "images": [
+              "photos/site1.JPEG", "photos/site2.JPEG", "photos/site3.JPEG",
+              "photos/site4.JPEG", "photos/site5.JPEG", "photos/site6.JPEG",
+              "photos/site7.JPEG", "photos/site8.JPEG", "photos/site9.JPEG",
+              "photos/site10.JPEG", "photos/site11.JPEG", "photos/site12.JPEG",
+              "photos/site13.JPEG", "photos/site14.JPEG", "photos/site15.JPEG",
+              "photos/site16.JPEG", "photos/site17.JPEG", "photos/site18.JPEG"
+            ]
+          },
+          {
+            "id": "tree",
+            "label": "Tree Work",
+            "images": [
+              "photos/tree1.jpeg", "photos/tree2.jpeg", "photos/tree3.jpeg",
+              "photos/tree4.jpeg", "photos/tree5.jpeg", "photos/tree6.jpeg",
+              "photos/tree7.jpeg", "photos/tree8.jpeg", "photos/tree9.jpeg",
+              "photos/tree10.jpeg", "photos/tree11.jpeg", "photos/tree12.jpeg",
+              "photos/tree13.jpeg", "photos/tree14.jpeg", "photos/tree15.jpeg",
+              "photos/tree16.jpeg", "photos/tree17.jpeg", "photos/tree18.jpeg",
+              "photos/tree19.jpeg"
+            ]
+          }
+        ]
+      }
+    },
+    "contact": {
+      "url": "contact.html",
+      "sections": {
+        "hero": {
+          "heading": "Contact Us",
+          "subheading": "Tell us a little about your property and what you're hoping to accomplish. We will follow up to ask any additional questions and schedule a time to walk the property if needed."
+        },
+        "form": {
+          "fields": [
+            { "name": "name", "label": "Name", "type": "text", "required": true },
+            { "name": "email", "label": "Email", "type": "email", "required": true },
+            { "name": "phone", "label": "Phone", "type": "tel", "required": false },
+            {
+              "name": "service",
+              "label": "Service needed",
+              "type": "select",
+              "required": true,
+              "options": ["Site Services", "Tree Services", "Fencing Services"]
+            },
+            { "name": "location", "label": "Property location (city / area)", "type": "text", "required": false },
+            {
+              "name": "message",
+              "label": "How can we help?",
+              "type": "textarea",
+              "required": true,
+              "hint": "A few details about the property size, access, and your goals are helpful."
+            }
+          ],
+          "submitLabel": "Send message"
+        },
+        "serviceArea": {
+          "heading": "We are based near DeLand and typically serve:",
+          "areas": [
+            "DeLand & DeLeon Springs",
+            "Surrounding rural Central Florida areas",
+            "Residential neighborhoods and acreage properties"
+          ]
+        },
+        "directContact": {
+          "heading": "Prefer to talk directly?",
+          "phone": "(386) 561-0003",
+          "email": "tyler@hlsdeland.com",
+          "note": "If you reach us after hours, leave a brief message with your name, property location, and what you're looking to do."
+        }
+      }
+    },
+    "join": {
+      "url": "join.html",
+      "sections": {
+        "hero": {
+          "heading": "Join Our Team"
+        },
+        "intro": {
+          "paragraphs": [
+            "We are always interested in connecting with dependable people who take pride in their work and respect customers' properties.",
+            "If you have experience with equipment operation, tree work, fencing, or construction-related trades, we would like to hear from you."
+          ]
+        },
+        "expectations": {
+          "heading": "What to expect",
+          "bullets": [
+            "Outdoor work on a variety of properties",
+            "Hands-on, equipment-focused projects",
+            "Opportunities to grow skills over time"
+          ]
+        },
+        "form": {
+          "fields": [
+            { "name": "name", "label": "Name", "type": "text", "required": true },
+            { "name": "email", "label": "Email", "type": "email", "required": true },
+            { "name": "phone", "label": "Phone", "type": "tel", "required": false },
+            {
+              "name": "position",
+              "label": "Position of interest",
+              "type": "select",
+              "required": true,
+              "options": [
+                "Equipment operator",
+                "Tree crew",
+                "Fence installer",
+                "General labor",
+                "Other / mixed experience"
+              ]
+            },
+            {
+              "name": "experience",
+              "label": "Tell us about your experience",
+              "type": "textarea",
+              "required": true,
+              "hint": "Include relevant equipment, certifications, and availability."
+            }
+          ],
+          "submitLabel": "Submit application",
+          "responseNote": "We review submissions as needed based on current and upcoming projects. If there is a potential fit, we will reach out to talk more about your experience and next steps."
+        }
+      }
+    }
+  },
+  "footer": {
+    "brand": "Hoag Land Services, LLC est. 2017",
+    "description": "Site work, tree services, and fencing for residential & commercial properties.",
+    "serviceArea": "Serving DeLand, DeLeon Springs, and surrounding Central Florida areas.",
+    "phone": "(386) 561-0003",
+    "email": "tyler@hlsdeland.com",
+    "social": {
+      "facebook": "https://facebook.com/hoaglandservices",
+      "instagram": "https://instagram.com/hls_deland"
+    },
+    "copyright": "© 2025 Hoag Land Services. All rights reserved."
+  },
+  "assets": {
+    "logo": "photos/HLSlogo-nobackground.png",
+    "heroBg": "photos/logo_enhanced.png",
+    "ogImage": "photos/og-image.jpg",
+    "favicon": {
+      "ico": "photos/favicon/favicon.ico",
+      "svg": "photos/favicon/favicon.svg",
+      "appleTouchIcon": "photos/favicon/apple-touch-icon.png",
+      "webmanifest": "photos/favicon/site.webmanifest"
+    }
+  }
+}

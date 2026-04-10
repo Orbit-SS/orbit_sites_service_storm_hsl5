@@ -1,0 +1,271 @@
+{
+  "brand": {
+    "name": "Hoag Land Services",
+    "shortName": "HLS",
+    "tagline": "Central Florida • Site • Tree • Fence",
+    "industry": "Land services, tree services, fencing — residential & commercial",
+    "tone": "Practical, straightforward, dependable. No-frills language. Action-oriented.",
+    "certifications": ["ISA Certified Arborist", "ISA Tree Risk Assessment Qualified"]
+  },
+  "colors": {
+    "cssVariables": {
+      "--color-bg": "#FFFFFF",
+      "--color-text": "#2F2F2F",
+      "--color-muted": "#6B7280",
+      "--color-surface": "#F4F5F7",
+      "--color-brand": "#2E7D32",
+      "--color-accent": "#B66E41",
+      "--color-beige": "#F2E8C6",
+      "--color-dark": "#1F2933",
+      "--color-border": "#E5E7EB",
+      "--color-error": "#B91C1C",
+      "--color-success": "#166534"
+    },
+    "palette": {
+      "primary": {
+        "name": "Forest Green",
+        "hex": "#2E7D32",
+        "usage": "Header/nav background, check-list marks, form focus rings, CTA button text (on white)"
+      },
+      "accent": {
+        "name": "Burnt Sienna / Terracotta",
+        "hex": "#B66E41",
+        "usage": "Service card accent bars, list bullet dots, links, form-required asterisks, btn-accent background, badge--accent text"
+      },
+      "accentHover": {
+        "name": "Dark Sienna",
+        "hex": "#9b5533",
+        "usage": "btn-accent hover state"
+      },
+      "background": {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "usage": "Page background, card backgrounds, nav dropdown, btn-primary background"
+      },
+      "surface": {
+        "name": "Light Grey",
+        "hex": "#F4F5F7",
+        "usage": "Alt section backgrounds (.section--alt), chip backgrounds, badge backgrounds, nav link hover"
+      },
+      "text": {
+        "name": "Near Black",
+        "hex": "#2F2F2F",
+        "usage": "Body text"
+      },
+      "muted": {
+        "name": "Mid Grey",
+        "hex": "#6B7280",
+        "usage": "Secondary / supporting text, card descriptions"
+      },
+      "beige": {
+        "name": "Warm Cream",
+        "hex": "#F2E8C6",
+        "usage": "Hero section subtitles, hero-secondary text, btn-primary hover, btn-outline text/border"
+      },
+      "dark": {
+        "name": "Deep Navy-Black",
+        "hex": "#1F2933",
+        "usage": "Headings (h1–h4), brand name"
+      },
+      "border": {
+        "name": "Light Border Grey",
+        "hex": "#E5E7EB",
+        "usage": "Form input borders, card soft borders"
+      },
+      "footer": {
+        "name": "Dark Footer",
+        "hex": "#101623",
+        "usage": "Footer background"
+      },
+      "footerText": {
+        "name": "Light Footer Text",
+        "hex": "#E5E7EB",
+        "usage": "Footer body text"
+      },
+      "footerMuted": {
+        "name": "Footer Muted",
+        "hex": "#9CA3AF",
+        "usage": "Footer bottom bar text"
+      },
+      "error": {
+        "hex": "#B91C1C",
+        "usage": "Form error messages"
+      },
+      "success": {
+        "hex": "#166534",
+        "usage": "Form success messages"
+      }
+    },
+    "alternateAccents": {
+      "comment": "Documented in CSS as alt options, not currently used",
+      "setB": "#586C3D",
+      "setC": "#2F5D3A",
+      "setD": "#4B3A2A"
+    },
+    "heroOverlay": "linear-gradient(135deg, rgba(11,44,25,0.70), rgba(11,44,25,0.50))",
+    "heroOverlayBase": "rgba(11,44,25,0.70) → rgba(11,44,25,0.50)"
+  },
+  "typography": {
+    "fontStack": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+    "cssVariable": "--font-sans",
+    "note": "System font stack — no external font CDN. No Google Fonts. All weights use system rendering.",
+    "lineHeight": "1.6",
+    "sizes": {
+      "heroTitle": { "mobile": "2rem", "desktop": "2.4rem" },
+      "sectionHeading": { "mobile": "1.75rem", "desktop": "2rem" },
+      "heroBadge": "0.85rem",
+      "cardTitle": "1.05rem",
+      "body": "inherit (~16px)",
+      "small": "0.9–0.95rem",
+      "xsmall": "0.8rem",
+      "footer": "0.85rem"
+    },
+    "weights": {
+      "heading": 600,
+      "brand": 600,
+      "strong": 600,
+      "button": 500,
+      "label": 500
+    },
+    "letterSpacing": {
+      "brand": "0.08em",
+      "heroBadge": "0.12em",
+      "sectionHeading": "0.02em",
+      "chips": "0.12em",
+      "cardPill": "0.12em"
+    }
+  },
+  "layout": {
+    "maxWidth": "1100px",
+    "containerPadding": "1rem (var(--space-4))",
+    "breakpoints": {
+      "md": "768px",
+      "lg": "1024px"
+    },
+    "sectionPadding": "2.5rem 0 (var(--space-10))",
+    "sectionPaddingTight": "1.5rem 0 (var(--space-6))"
+  },
+  "spacing": {
+    "--space-0": "0",
+    "--space-1": "0.25rem",
+    "--space-2": "0.5rem",
+    "--space-3": "0.75rem",
+    "--space-4": "1rem",
+    "--space-5": "1.25rem",
+    "--space-6": "1.5rem",
+    "--space-8": "2rem",
+    "--space-10": "2.5rem",
+    "--space-12": "3rem",
+    "--space-16": "4rem"
+  },
+  "borderRadius": {
+    "--radius": "10px",
+    "--radius-pill": "999px"
+  },
+  "shadows": {
+    "--shadow": "0 6px 20px rgba(0,0,0,.08)",
+    "cardHover": "0 18px 38px rgba(0,0,0,0.12)",
+    "header": "0 2px 6px rgba(0,0,0,0.15)",
+    "lightbox": "rgba(0,0,0,0.9) overlay"
+  },
+  "components": {
+    "header": {
+      "background": "#2E7D32 (var(--color-brand))",
+      "position": "sticky top",
+      "textColor": "#FFFFFF",
+      "height": "~56px",
+      "logoHeight": "50px"
+    },
+    "nav": {
+      "desktopLinks": {
+        "color": "#FFFFFF",
+        "hoverBg": "rgba(255,255,255,0.14)"
+      },
+      "mobileDropdown": {
+        "background": "#FFFFFF",
+        "linkColor": "var(--color-dark)",
+        "hoverBg": "var(--color-surface)"
+      }
+    },
+    "buttons": {
+      "base": "display:inline-flex; padding:0.5rem 1rem; border-radius:999px; font-size:0.95rem; font-weight:500;",
+      "primary": { "bg": "#FFFFFF", "color": "#2E7D32", "hoverBg": "#F2E8C6" },
+      "outline": { "bg": "transparent", "border": "#F2E8C6", "color": "#F2E8C6", "hoverBg": "rgba(255,255,255,0.12)" },
+      "accent": { "bg": "#B66E41", "color": "#FFFFFF", "hoverBg": "#9b5533" },
+      "ghost": { "bg": "transparent", "color": "#B66E41", "hoverBg": "#F4F5F7" }
+    },
+    "cards": {
+      "base": { "bg": "#FFFFFF", "radius": "10px", "shadow": "0 6px 20px rgba(0,0,0,.08)", "border": "1px solid rgba(15,23,42,0.03)" },
+      "serviceCard": {
+        "accentBar": "linear-gradient(90deg, #B66E41, rgba(182,110,65,0.20))",
+        "accentBarHeight": "6px",
+        "hoverTransform": "translateY(-3px)",
+        "hoverShadow": "0 18px 38px rgba(0,0,0,0.12)",
+        "hoverBorder": "rgba(182,110,65,0.35)"
+      }
+    },
+    "hero": {
+      "bgImage": "photos/logo_enhanced.png",
+      "overlay": "linear-gradient(135deg, rgba(11,44,25,0.70), rgba(11,44,25,0.50))",
+      "textColor": "#FFFFFF",
+      "subtitleColor": "rgba(255,255,255,0.88)",
+      "landingMinHeight": "70vh"
+    },
+    "footer": {
+      "background": "#101623",
+      "textColor": "#E5E7EB",
+      "brandColor": "#FFFFFF",
+      "borderColor": "rgba(148,163,184,0.35)",
+      "mutedColor": "#9CA3AF",
+      "gridColumns": "2fr 1.5fr 1.2fr (desktop)"
+    },
+    "forms": {
+      "inputBorder": "#E5E7EB",
+      "inputFocusBorder": "#2E7D32",
+      "inputFocusOutline": "#2E7D32",
+      "requiredColor": "#B66E41",
+      "successColor": "#166534",
+      "errorColor": "#B91C1C"
+    },
+    "portfolio": {
+      "lightbox": {
+        "overlayBg": "rgba(0,0,0,0.9)",
+        "maxWidth": "900px",
+        "captionColor": "#E5E7EB"
+      },
+      "grid": {
+        "mobile": "1 column",
+        "sm": "2 columns (min-width:600px)",
+        "lg": "3 columns (min-width:900px)"
+      }
+    }
+  },
+  "animations": {
+    "reveal": {
+      "initial": "opacity:0; transform:translateY(20px)",
+      "active": "opacity:1; transform:translateY(0)",
+      "transition": "opacity 0.6s ease, transform 0.6s ease",
+      "trigger": "IntersectionObserver threshold:0.2"
+    },
+    "cardHover": "transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease",
+    "portfolioImageHover": "transform 0.25s ease, opacity 0.25s ease",
+    "buttonTransition": "background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease"
+  },
+  "imagery": {
+    "style": "Real job-site photography — no stock. Outdoor/rural Florida landscapes, equipment, cleared land, trees, fencing.",
+    "heroBackground": "photos/logo_enhanced.png (full-cover with dark green overlay)",
+    "serviceCards": {
+      "site": "photos/site1.JPEG",
+      "tree": "photos/tree5.JPEG",
+      "fence": "photos/fence5.jpeg"
+    },
+    "imageAspectRatio": "16/10 (service cards)",
+    "objectFit": "cover"
+  },
+  "cssSourceFile": "css/style.css",
+  "jsSourceFile": "js/main.js",
+  "forms": {
+    "provider": "Formspree (data-formspree attribute, action URL per form)",
+    "submitMethod": "fetch POST with Accept: application/json"
+  }
+}
