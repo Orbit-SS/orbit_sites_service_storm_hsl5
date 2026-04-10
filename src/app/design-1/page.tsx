@@ -79,18 +79,29 @@ const PORTFOLIO = [
 
 export default function Design1() {
   useEffect(() => {
-    const els = document.querySelectorAll('[data-reveal]');
+    const els = Array.from(document.querySelectorAll('[data-reveal]')) as HTMLElement[];
     const io = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            (e.target as HTMLElement).setAttribute('data-visible', 'true');
-            io.unobserve(e.target);
+            const el = e.target as HTMLElement;
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            io.unobserve(el);
           }
         }),
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0.08 }
     );
-    els.forEach((el) => io.observe(el));
+    els.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const offScreen = rect.top >= window.innerHeight || rect.bottom <= 0;
+      if (offScreen) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.transition = 'opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1)';
+      }
+      io.observe(el);
+    });
     return () => io.disconnect();
   }, []);
 

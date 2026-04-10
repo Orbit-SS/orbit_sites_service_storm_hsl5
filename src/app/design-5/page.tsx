@@ -96,18 +96,29 @@ export default function Design5() {
   const [activeService, setActiveService] = useState(0);
 
   useEffect(() => {
-    const els = document.querySelectorAll('[data-sig]');
+    const els = Array.from(document.querySelectorAll('[data-sig]')) as HTMLElement[];
     const io = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            (e.target as HTMLElement).setAttribute('data-vis', '1');
-            io.unobserve(e.target);
+            const el = e.target as HTMLElement;
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            io.unobserve(el);
           }
         }),
-      { threshold: 0.08 }
+      { threshold: 0.06 }
     );
-    els.forEach((el) => io.observe(el));
+    els.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const offScreen = rect.top >= window.innerHeight || rect.bottom <= 0;
+      if (offScreen) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      }
+      io.observe(el);
+    });
     return () => io.disconnect();
   }, []);
 

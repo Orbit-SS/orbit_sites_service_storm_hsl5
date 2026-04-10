@@ -55,18 +55,29 @@ export default function Design2() {
   const filmRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const els = document.querySelectorAll('[data-slide]');
+    const els = Array.from(document.querySelectorAll('[data-slide]')) as HTMLElement[];
     const io = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            (e.target as HTMLElement).setAttribute('data-in', 'true');
-            io.unobserve(e.target);
+            const el = e.target as HTMLElement;
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            io.unobserve(el);
           }
         }),
-      { threshold: 0.12 }
+      { threshold: 0.08 }
     );
-    els.forEach((el) => io.observe(el));
+    els.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const offScreen = rect.top >= window.innerHeight || rect.bottom <= 0;
+      if (offScreen) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(-32px)';
+        el.style.transition = 'opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)';
+      }
+      io.observe(el);
+    });
     return () => io.disconnect();
   }, []);
 

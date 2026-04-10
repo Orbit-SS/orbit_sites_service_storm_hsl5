@@ -2,14 +2,7 @@
 
 /* NO smooth transitions, NO border-radius, NO softness */
 
-:global([data-raw]) {
-  opacity: 0;
-  transition: none;
-}
-
-:global([data-raw][data-on='1']) {
-  opacity: 1;
-}
+/* Scroll reveal handled entirely via JS inline styles */
 
 /* ── Base ── */
 .page {

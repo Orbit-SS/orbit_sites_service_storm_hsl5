@@ -49,18 +49,27 @@ const AREAS = ['DELAND', 'DELEON SPRINGS', 'RURAL CENTRAL FL', 'RESIDENTIAL NEIG
 
 export default function Design4() {
   useEffect(() => {
-    const els = document.querySelectorAll('[data-raw]');
+    const els = Array.from(document.querySelectorAll('[data-raw]')) as HTMLElement[];
     const io = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            (e.target as HTMLElement).setAttribute('data-on', '1');
-            io.unobserve(e.target);
+            const el = e.target as HTMLElement;
+            el.style.opacity = '1';
+            io.unobserve(el);
           }
         }),
-      { threshold: 0.08 }
+      { threshold: 0.06 }
     );
-    els.forEach((el) => io.observe(el));
+    els.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const offScreen = rect.top >= window.innerHeight || rect.bottom <= 0;
+      if (offScreen) {
+        el.style.opacity = '0';
+        // No transition for brutalist — instant reveal
+      }
+      io.observe(el);
+    });
     return () => io.disconnect();
   }, []);
 
