@@ -1,0 +1,168 @@
+.main {
+  min-height: 100vh;
+  background: #06080f;
+  color: #c8d5e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+  padding: 0 0 4rem;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  border-bottom: 1px solid #111827;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2d3e52;
+}
+
+.hero {
+  max-width: 760px;
+  margin: 5rem auto 4rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.heroSub {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #2d3e52;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #f0f6ff;
+  margin: 0 0 1.25rem;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.heroDesc {
+  font-size: 1rem;
+  color: #4a5f78;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.grid {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #0a0e1a;
+  border: 1px solid #111827;
+  border-radius: 14px;
+  padding: 2rem 1.75rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.025), transparent 70%);
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: #1e2d42;
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cardNum {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.cardSwatch {
+  width: 28px;
+  height: 6px;
+  border-radius: 3px;
+  margin-bottom: 0.25rem;
+}
+
+.cardName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e8f0fa;
+  letter-spacing: -0.015em;
+}
+
+.cardTag {
+  font-size: 0.67rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2d3e52;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: #3d5068;
+  line-height: 1.65;
+  margin: 0.5rem 0 0;
+  flex: 1;
+}
+
+.cardCta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: #2d3e52;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #111827;
+  transition: color 0.2s;
+}
+
+.card:hover .cardCta {
+  color: #7a9fc0;
+}
+
+.arrow {
+  transition: transform 0.2s;
+}
+
+.card:hover .arrow {
+  transform: translateX(4px);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #111827;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .topBar { padding: 1rem 1.25rem; }
+  .hero { margin: 3rem auto 2.5rem; padding: 0 1.25rem; }
+  .grid { padding: 0 1.25rem; }
+  .heroTitle { font-size: 2rem; }
+}
