@@ -9,6 +9,23 @@ import "dotenv/config";
 
 const PORT = 4000;
 
+// If SANDBOX_BRANCH is set, the agent must stay on that branch.
+// When absent (internal use), any branch is allowed.
+const ALLOWED_BRANCH = process.env.SANDBOX_BRANCH || null;
+
+// Authoritative branch checkout — runs before anything else.
+// The sandbox setup already tries this, but can race against git fetch.
+// Doing it here guarantees we're on the right branch before the first message.
+if (ALLOWED_BRANCH) {
+  try {
+    execSync(`git fetch origin ${ALLOWED_BRANCH}`, { cwd: "/vercel/sandbox", stdio: "pipe" });
+    execSync(`git checkout ${ALLOWED_BRANCH}`, { cwd: "/vercel/sandbox", stdio: "pipe" });
+    console.log(`[agent-server] On branch: ${ALLOWED_BRANCH}`);
+  } catch (e) {
+    console.error(`[agent-server] Failed to checkout '${ALLOWED_BRANCH}':`, e.message);
+  }
+}
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -34,10 +51,10 @@ app.get("/messages", (_req, res) => {
 
 
 app.post("/message", async (req, res) => {
-  const { message } = req.body;
+  const { message, attachments = [] } = req.body;
 
   // Log user message
-  messages.push({ role: "user", content: message });
+  messages.push({ role: "user", content: message || "(attachment)" });
 
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache");
@@ -49,9 +66,25 @@ app.post("/message", async (req, res) => {
   let assistantText = "";
 
   try {
+    // Build content array when attachments are present
+    let sendArg = message;
+    if (attachments.length > 0) {
+      const content = [];
+      for (const att of attachments) {
+        if (att.mediaType.startsWith('image/')) {
+          content.push({ type: 'image', source: { type: 'base64', media_type: att.mediaType, data: att.data } });
+        } else {
+          const decoded = Buffer.from(att.data, 'base64').toString('utf-8').slice(0, 20000);
+          content.push({ type: 'text', text: `[File: ${att.name}]\n${decoded}` });
+        }
+      }
+      if (message) content.push({ type: 'text', text: message });
+      sendArg = content;
+    }
+
     // Start streaming before sending so we don't miss events
     const stream = session.stream();
-    await session.send(message);
+    await session.send(sendArg);
 
     for await (const msg of stream) {
       switch (msg.type) {
@@ -84,10 +117,20 @@ app.post("/message", async (req, res) => {
           // Auto-commit and push on success
           if (msg.subtype === "success") {
             try {
-              execSync("git add -A", { cwd: "/vercel/sandbox" });
-              execSync(`git commit -m "${message.replace(/"/g, '\\"')}"`, { cwd: "/vercel/sandbox" });
-              execSync("git push", { cwd: "/vercel/sandbox" });
-              sendSSE(res, { type: "saved" });
+              // Branch protection: only push to the allowed branch
+              const currentBranch = execSync("git rev-parse --abbrev-ref HEAD", { cwd: "/vercel/sandbox" })
+                .toString()
+                .trim();
+
+              if (ALLOWED_BRANCH && currentBranch !== ALLOWED_BRANCH) {
+                // Silently skip — do not push to an unintended branch
+                console.warn(`[agent-server] Skipping push: on '${currentBranch}', expected '${ALLOWED_BRANCH}'`);
+              } else {
+                execSync("git add -A", { cwd: "/vercel/sandbox" });
+                execSync(`git commit -m "${message.replace(/"/g, '\\"').replace(/`/g, "\\`").replace(/\$/g, "\\$")}"`, { cwd: "/vercel/sandbox" });
+                execSync("git push", { cwd: "/vercel/sandbox" });
+                sendSSE(res, { type: "saved" });
+              }
             } catch (e) {
               // No changes to commit is fine
             }

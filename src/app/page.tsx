@@ -49,12 +49,12 @@ export default function Portal() {
     <main className={styles.main}>
       <div className={styles.topBar}>
         <span className={styles.client}>Hoag Land Services — DeLand, FL</span>
-        <span className={styles.label}>Internal Design Presentation</span>
+        <span className={styles.label}>HSL Showcase</span>
       </div>
 
       <div className={styles.hero}>
         <div className={styles.heroSub}>5 Design Explorations</div>
-        <h1 className={styles.heroTitle}>Which direction<br />fits the business?</h1>
+        <h1 className={styles.heroTitle}>HSL Showcase</h1>
         <p className={styles.heroDesc}>
           Same business, same content — five different directions. Pick the one that fits.
         </p>
