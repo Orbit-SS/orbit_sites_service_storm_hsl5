@@ -6,7 +6,7 @@ const designs = [
     num: '01',
     name: 'Precision',
     tag: 'Corporate / Client-Safe',
-    desc: 'Split-screen authority. Navy & deep green, Inter, razor-clean grids. Built for commercial PMs who need to see trust instantly.',
+    desc: 'Clean grids, navy & green. For commercial clients who need to see trust fast.',
     color: '#166534',
     href: '/design-1',
   },
@@ -14,7 +14,7 @@ const designs = [
     num: '02',
     name: 'Terrain',
     tag: 'Rugged / Outdoor',
-    desc: 'Full-bleed drama. Oswald condensed at 10vw, dark soil palette, burnt orange. Built for rural landowners who work the land.',
+    desc: 'Bold type, dark soil palette, burnt orange. For rural landowners who work the land.',
     color: '#c25418',
     href: '/design-2',
   },
@@ -22,7 +22,7 @@ const designs = [
     num: '03',
     name: 'Canvas',
     tag: 'Editorial / Magazine',
-    desc: 'Oversized Playfair italic serif, warm cream & antique gold. Speaks to premium homeowners building dream properties.',
+    desc: 'Warm cream & gold. For premium homeowners building something special.',
     color: '#b8915a',
     href: '/design-3',
   },
@@ -30,7 +30,7 @@ const designs = [
     num: '04',
     name: 'RAW',
     tag: 'Brutalist',
-    desc: 'Black, electric yellow, zero softness. Construction-site directness for developers who want the quote now, not a brand story.',
+    desc: 'Black & yellow, no softness. For developers who want the quote, not the story.',
     color: '#FFE500',
     href: '/design-4',
   },
@@ -38,7 +38,7 @@ const designs = [
     num: '05',
     name: 'Signal',
     tag: 'Dark / Kinetic',
-    desc: 'DM Mono monospace, neon green glow, animated scan lines. Tech-forward commercial developers. The design nobody asked for.',
+    desc: 'Neon green, monospace, animated. For tech-forward commercial developers.',
     color: '#00e87a',
     href: '/design-5',
   },
@@ -56,8 +56,7 @@ export default function Portal() {
         <div className={styles.heroSub}>5 Design Explorations</div>
         <h1 className={styles.heroTitle}>Which direction<br />fits the business?</h1>
         <p className={styles.heroDesc}>
-          Same business. Same real content. Five completely different design philosophies.
-          Each targets a different customer, speaks a different visual language.
+          Same business, same content — five different directions. Pick the one that fits.
         </p>
       </div>
 
